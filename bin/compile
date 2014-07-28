@@ -18,6 +18,8 @@ if [ -z "$BUILDPACKS_FILE" ]; then
   BUILDPACKS_FILE=$DEFAULT_BUILDPACKS_FILE
 fi
 
+echo "=====> Using buildpacks file: $BUILDPACKS_FILE"
+
 for BUILDPACK in $(cat $1/$BUILDPACKS_FILE); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
