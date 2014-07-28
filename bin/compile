@@ -14,7 +14,9 @@ unset GIT_DIR
 
 DEFAULT_BUILDPACKS_FILE=".buildpacks"
 
-if [ -z "$BUILDPACKS_FILE" ]; then
+if [ -f "$3/BUILDPACKS_FILE" ]; then
+  BUILDPACKS_FILE=$(cat "$3/BUILDPACKS_FILE")
+else
   BUILDPACKS_FILE=$DEFAULT_BUILDPACKS_FILE
 fi
 
